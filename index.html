@@ -150,6 +150,16 @@
       color: var(--emerald);
     }
     .hero-badge i { font-size: 14px; }
+    .hero-badge.urgent {
+      background: rgba(245,158,11,0.95); color: #422006;
+      border: 1px solid #fbbf24; font-weight: 800;
+      animation: urgent-pulse 2.2s ease-in-out infinite;
+      text-transform: uppercase; letter-spacing: 0.4px;
+    }
+    @keyframes urgent-pulse {
+      0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(245,158,11,0.6); }
+      50% { transform: scale(1.04); box-shadow: 0 0 0 6px rgba(245,158,11,0); }
+    }
     .hero h1 {
       font-family: 'Poppins', sans-serif; font-weight: 900;
       font-size: 38px; line-height: 1.15; margin-bottom: 16px;
@@ -181,6 +191,13 @@
       box-shadow: 0 20px 60px rgba(0,0,0,0.3);
       overflow: hidden;
     }
+    .form-urgency-tag {
+      background: linear-gradient(90deg, #b91c1c, #dc2626);
+      color: #fef3c7; font-size: 12px; font-weight: 800;
+      text-align: center; padding: 8px 14px;
+      text-transform: uppercase; letter-spacing: 0.6px;
+    }
+    .form-urgency-tag i { margin-right: 6px; color: #fde68a; }
     .form-top {
       background: linear-gradient(135deg, var(--green), var(--teal));
       padding: 18px 24px; text-align: center;
@@ -325,6 +342,40 @@
     .section-subtitle { color: var(--text-light); font-size: 16px; margin-bottom: 40px; max-width: 600px; }
     .text-center { text-align: center; }
     .mx-auto { margin-left: auto; margin-right: auto; }
+
+    /* SCARCITY STRIP */
+    .scarcity-strip {
+      background: linear-gradient(90deg, #b91c1c 0%, #dc2626 50%, #b91c1c 100%);
+      color: #fff; padding: 14px 20px;
+      box-shadow: inset 0 -1px 0 rgba(0,0,0,0.25);
+      position: relative; overflow: hidden;
+    }
+    .scarcity-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; align-items: center; gap: 16px;
+    }
+    .scarcity-strip i { font-size: 22px; color: #fef3c7; flex-shrink: 0; }
+    .scarcity-text { font-size: 14px; line-height: 1.45; flex: 1; }
+    .scarcity-text strong { color: #fef3c7; text-transform: uppercase; letter-spacing: 0.3px; }
+    .scarcity-cta {
+      flex-shrink: 0; background: #fef3c7; color: #7f1d1d;
+      padding: 10px 18px; border-radius: 8px; font-weight: 800;
+      text-decoration: none; font-size: 13px; text-transform: uppercase;
+      letter-spacing: 0.4px; transition: all 0.2s;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    .scarcity-cta:hover { background: #fff; transform: translateY(-1px); box-shadow: 0 4px 14px rgba(0,0,0,0.25); }
+    .scarcity-pulse {
+      position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, transparent, #fef3c7, transparent);
+      animation: scarcity-sweep 3s linear infinite;
+    }
+    @keyframes scarcity-sweep { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
+    @media (max-width: 768px) {
+      .scarcity-inner { flex-direction: column; text-align: center; gap: 10px; }
+      .scarcity-text { font-size: 13px; }
+      .scarcity-cta { width: 100%; padding: 12px; }
+    }
 
     /* FUNDING BANNER */
     .funding-banner {
@@ -562,7 +613,7 @@
 <!-- HEADER -->
 <header class="header">
   <div class="header-banner">
-    <strong>No Payments Until 2028</strong> &mdash; Free in-home assessment &amp; written estimate
+    <i class="bi bi-exclamation-triangle-fill"></i> <strong>Limited 2026 Enrollment</strong> &mdash; No Payments Until 2028 offer closing soon. Lock in your spot today.
   </div>
   <div class="header-inner">
     <a href="index.html" class="header-logo">
@@ -581,12 +632,12 @@
   <div class="hero-inner">
     <div class="hero-text">
       <div class="hero-badges">
+        <span class="hero-badge urgent"><i class="bi bi-fire"></i> Limited 2026 Spots</span>
         <span class="hero-badge"><i class="bi bi-shield-check"></i> Licensed &amp; Insured</span>
         <span class="hero-badge"><i class="bi bi-calendar-check"></i> No Payments Until 2028</span>
-        <span class="hero-badge"><i class="bi bi-clipboard-check"></i> Free Written Estimate</span>
       </div>
       <h1>Upgrade Your Home Today &mdash; <span>No Payments Until 2028</span></h1>
-      <p class="hero-sub">Free in-home assessment. Free written estimate. We review every available rebate program. Low monthly payments &mdash; and your first payment isn't due until 2028.</p>
+      <p class="hero-sub"><strong style="color:#fde68a;">Enrollment is closing soon for 2026.</strong> Free in-home assessment. Free written estimate. Every rebate program reviewed. Low monthly payments &mdash; and your first payment isn't due until 2028. Don't wait &mdash; spots are filling fast.</p>
       <div class="hero-ctas">
         <a href="#qualifyForm" class="btn btn-green" onclick="scrollToForm();return false;"><i class="bi bi-clipboard-check-fill"></i> Get My Free Estimate</a>
         <a href="tel:+18884804286" class="btn btn-outline-white"><i class="bi bi-telephone-fill"></i> Call (888) 480-4286</a>
@@ -595,6 +646,7 @@
 
     <!-- FORM -->
     <div class="form-card" id="qualifyForm">
+      <div class="form-urgency-tag"><i class="bi bi-fire"></i> Limited 2026 Spots &mdash; Closing Soon</div>
       <div class="form-top">
         <h2 id="formTitle"><i class="bi bi-clipboard-check-fill"></i> Free Estimate</h2>
         <p id="formSub">Get your free in-home estimate in under 2 minutes</p>
@@ -701,8 +753,8 @@
         <!-- Success -->
         <div class="form-success" id="formSuccess">
           <div class="success-check"><i class="bi bi-check-lg"></i></div>
-          <h3>Got it &mdash; we'll be in touch!</h3>
-          <p>Thank you! A specialist will call you within 24 hours during business hours (8 AM &ndash; 8 PM) to confirm your free in-home assessment and written estimate. No payments until 2028.</p>
+          <h3>Your spot is reserved!</h3>
+          <p>Thank you! Your spot is held for the next 24 hours. A specialist will call during business hours (8 AM &ndash; 8 PM) to confirm your free in-home assessment, written estimate, and lock in your No-Payments-Until-2028 financing slot before the program closes.</p>
           <a href="tel:+18884804286" class="success-phone"><i class="bi bi-telephone-fill"></i> Call Now &mdash; (888) 480-4286</a>
         </div>
       </div>
@@ -728,12 +780,25 @@
   </div>
 </div>
 
+<!-- SCARCITY STRIP -->
+<div class="scarcity-strip">
+  <div class="scarcity-inner">
+    <div class="scarcity-pulse"></div>
+    <i class="bi bi-exclamation-triangle-fill"></i>
+    <div class="scarcity-text">
+      <strong>Limited 2026 Enrollment Closing Soon.</strong>
+      The No-Payments-Until-2028 financing program is filling up fast &mdash; we are only accepting a limited number of new homeowners this month before the offer closes.
+    </div>
+    <a href="#qualifyForm" class="scarcity-cta" onclick="scrollToForm();return false;">Lock In My Spot</a>
+  </div>
+</div>
+
 <!-- PROMISE BANNER -->
 <div class="funding-banner fade-in">
   <div class="funding-inner">
     <div class="funding-amount">No Payments Until 2028</div>
     <div class="funding-label">Major Home Upgrades, Zero Out-of-Pocket Today</div>
-    <div class="funding-sub">Free in-home assessment, free written estimate, and a review of every rebate program you may qualify for</div>
+    <div class="funding-sub"><strong>Spots are limited and filling fast.</strong> Free in-home assessment, free written estimate, and a review of every rebate program you may qualify for &mdash; while the 2026 enrollment window is still open.</div>
   </div>
 </div>
 
@@ -881,8 +946,8 @@
 
 <!-- MID CTA -->
 <div class="cta-banner fade-in">
-  <h2>Get Your Free Estimate Today</h2>
-  <p>Free in-home assessment, free written estimate &mdash; and your first payment isn't due until 2028</p>
+  <h2><i class="bi bi-fire"></i> Don't Miss the 2026 Enrollment Window</h2>
+  <p>Spots for the No-Payments-Until-2028 financing offer are limited and filling fast. Lock yours in today before the program closes.</p>
   <div class="cta-row">
     <a href="#qualifyForm" class="btn btn-white" onclick="scrollToForm();return false;"><i class="bi bi-clipboard-check-fill"></i> Get My Free Estimate</a>
     <a href="tel:+18884804286" class="btn btn-outline-white"><i class="bi bi-telephone-fill"></i> Call (888) 480-4286</a>
@@ -997,14 +1062,18 @@
         <div class="faq-q" onclick="toggleFaq(this)">How long does the appointment take? <i class="bi bi-chevron-down"></i></div>
         <div class="faq-a">About one hour. The specialist arrives within a 30-minute window, walks the project with you, reviews rebates and financing, and leaves you with a written estimate. There's no pressure to decide on the spot.</div>
       </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">When does the &ldquo;No Payments Until 2028&rdquo; offer end? <i class="bi bi-chevron-down"></i></div>
+        <div class="faq-a">The 2026 enrollment window is limited and we are only taking on a set number of new homeowners each month before the offer closes. Once spots are full or the program ends, the financing terms go back to standard offers without the 2028 deferral. To lock in the current terms, submit the form or call (888) 480-4286 today &mdash; we hold your spot for 24 hours so a specialist can confirm your appointment.</div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- FINAL CTA -->
 <div class="cta-banner fade-in">
-  <h2>Get Your Free Estimate Today</h2>
-  <p>Free in-home assessment, free written estimate, no payments until 2028 for approved homeowners</p>
+  <h2><i class="bi bi-hourglass-split"></i> Last Call &mdash; Lock In Your 2028 Payment Deferral</h2>
+  <p>Once the 2026 enrollment window closes, this financing offer goes away. Free in-home assessment, free written estimate, no payments until 2028 for approved homeowners &mdash; but only while spots are available.</p>
   <div class="cta-row">
     <a href="#qualifyForm" class="btn btn-white" onclick="scrollToForm();return false;"><i class="bi bi-clipboard-check-fill"></i> Get My Free Estimate</a>
     <a href="tel:+18884804286" class="btn btn-outline-white"><i class="bi bi-telephone-fill"></i> Call (888) 480-4286</a>
