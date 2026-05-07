@@ -10,7 +10,7 @@
 
   var STR = {
     en: {
-      greeting: 'Questions about your home upgrade?',
+      greeting: 'Limited 2026 spots — questions?',
       title: 'Luna',
       subtitle: 'Home Upgrades Program',
       placeholder: 'Type a message...',
@@ -20,7 +20,7 @@
       rateLimit: 'Please wait a moment before sending another message.',
     },
     es: {
-      greeting: '\u00bfTienes preguntas sobre tu remodelaci\u00f3n?',
+      greeting: 'Cupos 2026 limitados \u2014 \u00bfpreguntas?',
       title: 'Luna',
       subtitle: 'Programa de Mejoras del Hogar',
       placeholder: 'Escribe un mensaje...',
@@ -34,12 +34,12 @@
 
   var PAGE_GREETINGS = {
     en: {
-      index: "Hi there! I'm Luna, your home upgrade assistant. I can help with bathroom remodels, roofing, windows, flooring, HVAC, solar, kitchens, and exterior projects \u2014 and we have financing with no payments until 2028 for approved homeowners. Want a free in-home estimate? Just ask me anything, or fill out the quick form above!",
-      default: "Hi! I'm Luna with the California Home Upgrades Program. I can answer questions about our free in-home assessment, written estimates, the no-payments-until-2028 financing offer, and the rebate programs you may qualify for. Ask me anything!"
+      index: "Hi there! I'm Luna with the California Home Upgrades Program. Quick heads up \u2014 our 2026 enrollment is limited and the No-Payments-Until-2028 financing offer is closing soon, so I want to help you lock in a spot before it's gone. I can help with bathroom, roofing, windows, flooring, HVAC, solar, kitchens, and exterior projects. Want a free in-home estimate? Ask me anything or fill out the quick form above!",
+      default: "Hi! I'm Luna with the California Home Upgrades Program. Spots for the No-Payments-Until-2028 financing offer are limited and filling up fast \u2014 I want to make sure you get yours locked in before the 2026 enrollment window closes. Ask me anything about the free in-home assessment, written estimates, financing, or rebate programs!"
     },
     es: {
-      index: "\u00a1Hola! Soy Luna, tu asistente para mejoras del hogar. Puedo ayudarte con ba\u00f1os, techos, ventanas, pisos, HVAC, energ\u00eda solar, cocinas y proyectos exteriores \u2014 y tenemos financiamiento sin pagos hasta 2028 para los propietarios aprobados. \u00bfQuieres un estimado gratis a domicilio? \u00a1Preg\u00fantame lo que quieras o llena el formulario r\u00e1pido arriba!",
-      default: "\u00a1Hola! Soy Luna, del Programa de Mejoras del Hogar de California. Puedo responder tus preguntas sobre la evaluaci\u00f3n gratis a domicilio, los estimados por escrito, la oferta sin pagos hasta 2028 y los programas de reembolso a los que puedes calificar. \u00a1Preg\u00fantame lo que quieras!"
+      index: "\u00a1Hola! Soy Luna, del Programa de Mejoras del Hogar de California. Importante \u2014 los cupos para 2026 son limitados y la oferta de Sin Pagos Hasta 2028 est\u00e1 cerrando pronto, as\u00ed que quiero ayudarte a asegurar tu lugar antes de que se acabe. Puedo ayudarte con ba\u00f1os, techos, ventanas, pisos, HVAC, energ\u00eda solar, cocinas y proyectos exteriores. \u00bfQuieres un estimado gratis a domicilio? \u00a1Preg\u00fantame lo que quieras o llena el formulario r\u00e1pido arriba!",
+      default: "\u00a1Hola! Soy Luna, del Programa de Mejoras del Hogar de California. Los cupos para la oferta Sin Pagos Hasta 2028 son limitados y se est\u00e1n llenando r\u00e1pido \u2014 quiero asegurarme que reserves el tuyo antes que cierre el per\u00edodo de inscripci\u00f3n 2026. \u00a1Preg\u00fantame lo que quieras sobre la evaluaci\u00f3n gratis, estimados por escrito, financiamiento o programas de reembolso!"
     }
   };
 
